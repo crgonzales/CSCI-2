@@ -1,1 +1,1 @@
-# CSCI-2
+# CSCI-2 Labs
