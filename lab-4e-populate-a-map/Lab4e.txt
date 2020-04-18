@@ -1,0 +1,9 @@
+Create a map that associates email to people.  That is, create a map where the key is a string object and the value is a Person object.
+
+1. Hard code at least 5 elements in this map.
+2. Use an iterator to display the entire map, that is, the key and value of each element.
+
+
+3. Allow the user to type in an email address.
+4. Display only the first name associated with that email address.  Say "not in database" if the email is not in the map.
+5. Allow the user to search again.
