@@ -1,0 +1,12 @@
+Design a regular c-type function that validates a user entered email against a white list of valid extensions. Here is a good prototype:
+
+bool isEmailValid(string);
+The list of valid email extensions should be extensible.  In other words, we might add approved email extensions later.
+
+list<string> validEmailExtensions =  { "@gmail.com", "@aol.com", "@cos.edu", "@giant.cos.edu"};
+1. The function should throw an exception if @ is not in the string argument. 
+2. The function should return true if the extension is in the list and false if it is not.
+3. Make good use of the methods in the String library. (For example, find, substr, size may be useful).
+
+Write a short run again routine in the main for testing.
+
