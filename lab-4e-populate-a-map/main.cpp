@@ -105,20 +105,13 @@ int main() {
 
 				map<string, Person>::iterator it;
 
-				for (it = per.begin(); it != per.end(); ++it) {
+				if (per.find(em) != per.end()) {
+					cout << "User Found !!" << endl;
+					it = per.find(em);
+					cout << (it->second).display() << endl<<endl;
 
-					if (it->first == em) {
-
-						cout << "User Found !!" << endl;
-
-						cout << it->first << " - " << (it->second).display() << endl;
-
-						break;
-
-					}
 
 				}
-
 				if (it == per.end()) {
 
 					cout << "Email does not exist in database" << endl;
