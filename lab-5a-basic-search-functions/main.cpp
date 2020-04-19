@@ -5,12 +5,17 @@ using namespace std;
 
 list<int>::iterator searchListLinear(list<int>& arg, int target);
 list<int>::iterator searchListBinary(list<int>& arg, int target);
-
+void generateRandNumbers(int randNumbers[], int size);
 int main(){
-	int myints[] = { 75,23,65,42,13 };
-	std::list<int> mylist(myints, myints + 5);
+	const int size = 100;
+	int myints[size] = {0};
+	int search = 0, found=0;
 
-	std::cout << "mylist contains:";
+		
+	generateRandNumbers(myints,size);
+	std::list<int> mylist(myints, myints+100);
+	list<int>::iterator itr = mylist.begin();
+	std::cout << "my list contains:";
 	for (std::list<int>::iterator it = mylist.begin(); it != mylist.end(); ++it)
 		std::cout << ' ' << *it;
 
@@ -19,15 +24,19 @@ int main(){
 
 	mylist.sort();
 
-	std::cout << "mylist contains:";
+	std::cout << "my sorted list contains:";
 	for (std::list<int>::iterator it = mylist.begin(); it != mylist.end(); ++it)
 		std::cout << ' ' << *it;
 
-	std::cout << '\n';
+	cout << endl;
+	cout << "Please enter an integer to search for: ";
+    cin >> search;
+	itr = searchListBinary(mylist, search);
+	if (search == *itr) {
+		cout << *itr << " found!!!@@@ " << endl;
 
-	cout << *searchListBinary(mylist, 76) << endl;
-
-	if (mylist.end != 76)
+	}
+	else
 		cout << "item not found!!!@@@" << endl;
 
 	return (0);
@@ -81,4 +90,25 @@ int binarySearch(const int arr[], int first, int last, int target) {
 	}
 	return index;
 
+}
+
+
+void generateRandNumbers(int randNumbers[], int size)
+{
+	int index = 0;
+	int new_num;
+	for (int counter = 0; counter < size; counter++)
+	{
+		do {
+			new_num = rand() % 1000 + 1;
+			for (int i = 0; i < size; i++) {
+				if (new_num == randNumbers[i]) {
+					new_num = 0;
+					break;
+				}
+			}
+		} while (new_num == 0);
+		randNumbers[index] = new_num;
+		index++;
+	}
 }
