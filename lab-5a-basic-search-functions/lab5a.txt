@@ -1,0 +1,18 @@
+Create two regular c-type functions that take in an integer list by reference, searches for a particular int target and then returns an iterator pointing to the target. Implement a linear search and a binary search. Here are the function prototypes:
+
+list<int>::iterator searchListLinear(list<int>& arg, int target);
+list<int>::iterator searchListBinary(list<int>& arg, int target);
+1. In the main, populate a list with 100 unique random integers (no repeats).
+
+2. Sort the list using the sort method provided in the list ADT. (Recall: the Binary search requires a sorted list.) 
+
+3. Output the list for the user to see.
+
+4. Simple UI: in a run-again loop, allow the user to type in an integer to search for.  Use both functions to search for the users target.
+
+5. If the integer is found, output the integer and say "integer found", otherwise the int is not in the list return arg.end() from the function and say "integer not found."
+
+6. Test thoroughly... we will use these two functions in the next lab.
+
+---
+
