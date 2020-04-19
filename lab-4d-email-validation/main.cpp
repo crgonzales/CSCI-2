@@ -1,9 +1,11 @@
 //Carlos Gonzales
 //Lab 4d
+
 #include <string>
 #include <map>
 #include <iostream>
 #include <list>
+#include <iterator>
 
 using namespace std;
 
