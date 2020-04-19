@@ -67,34 +67,34 @@ list<int>::iterator searchListLinear(list<int>& arg, int target){
 	return arg.begin();
 }
 
-list<int>::iterator searchListBinary(list<int>& arg, int target){
-	list<int>::iterator itr = arg.begin();
-	if (arg.size() == 1)
-		return itr;
-	else {
-		int mid = arg.size() / 2;
-		cout << endl << "mid= " << mid << endl;
-		advance(itr, mid);
-		cout << "ADVANCE ITR: " << *itr << endl;
-		if (target == *itr)
-			return itr;
-		else if (target < *itr) {
-			arg.resize(mid);
-			return(searchListBinary(arg, target));
-		}
+list<int>::iterator searchListBinary(list<int>& arg, int target) {
+	int lowerBound = 0;
+	int upperBound = arg.size() - 1;  // size return 10, but -1 = 9
+	int midPoint = 0;
+	int valueAtMidPoint = 0;
 
-		else {
-			for (int i = 1; i < mid + 1; i++) {
-				cout << *arg.begin();
-				arg.pop_front();
-				cout << endl;
-			}
-			return(searchListBinary(arg, target));
-		}
+
+	while (lowerBound <= upperBound) {
+		midPoint = (upperBound + lowerBound) / 2;
+		list<int>::iterator it = arg.begin();
+		advance(it, midPoint);
+		valueAtMidPoint = *it;
+
+		if (target < valueAtMidPoint)
+			upperBound = midPoint - 1;
+		else if (target > valueAtMidPoint)
+			lowerBound = midPoint + 1;
+		else if (target == valueAtMidPoint)
+			return it;
 
 	}
-	
 }
+
+
+
+
+
+
 void generateRandNumbers(int randNumbers[], int size)
 {
 	int index = 0;
