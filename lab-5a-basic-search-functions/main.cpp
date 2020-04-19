@@ -30,6 +30,7 @@ int main(){
 
 	cout << endl;
 	cout << *mylist.begin()<< endl;
+	cout << mylist.size() << endl;
 	cout << "Please enter an integer to search for: ";
     cin >> search;
 	itr = searchListBinary(mylist, search);
@@ -74,10 +75,11 @@ list<int>::iterator searchListBinary(list<int>& arg, int target){
 		int mid = arg.size() / 2;
 		cout << endl << "mid= " << mid << endl;
 		advance(itr, mid);
+		cout << "ADVANCE ITR: " << *itr << endl;
 		if (target == *itr)
 			return itr;
 		else if (target < *itr) {
-			arg.resize(mid - 1);
+			arg.resize(mid);
 			return(searchListBinary(arg, target));
 		}
 
@@ -93,14 +95,6 @@ list<int>::iterator searchListBinary(list<int>& arg, int target){
 	}
 	
 }
-
-
-
-
-
-
-
-
 void generateRandNumbers(int randNumbers[], int size)
 {
 	int index = 0;
