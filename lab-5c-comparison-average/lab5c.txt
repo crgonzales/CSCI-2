@@ -1,0 +1,9 @@
+Use your two search functions from the previous lab.
+
+1. Eliminate all UI in the main and automate the searching process.
+
+2. Run 50 to 100 thousand linear and binary searches. 
+
+3. Keep track of the number of comparisons for each search and calculate an average number of comparisons for each algorithm using the law of large numbers.
+
+We will post answers on the announcements page.
