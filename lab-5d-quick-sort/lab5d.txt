@@ -1,0 +1,13 @@
+Quick Sort Algorithm: A recursive divide and conquer strategy for sorting a list: 
+
+Assignment: Code a quick sort of a randomly populated vector of integers.
+
+a. Partitioning Step: Take the first element of the unsorted vector and determine its final location in the sorted vector (In other words, all of the values to the left of the element in the vector are less than the element's value, and all values to the right of the element in the vector are greater than the element's value). This will result in one value in its proper location and two unsorted sub-vectors. 
+
+b. Recursive Step: Perform the partitioning step on each unsorted sub-vector.  Each time the partitioning step is performed on a sub-vector, another value is placed in its final location and two more sub-vectors are created.  
+
+c. Base Case: When a sub-vector consists of one element, the sub-vector is considered sorted. This defines the base case for the recursion. At this point the stack that saves the state of each function call will begin to pop.
+
+[ Wikipedia QuickSort Article (Links to an external site.) ]
+---
+
