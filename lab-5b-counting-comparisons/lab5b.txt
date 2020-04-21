@@ -1,0 +1,11 @@
+Modify your two list search functions to count the number of comparisons performed for each search. Do this by passing an integer value by reference to be accessed in the main. Here is a suggested new prototype:
+
+list<int>::iterator searchList(list<int>& arg, int target, int& count);
+The new parameter count is coming in from the main and can be changed by the function. (Hence, the pass by reference.)  
+
+1. Modify your UI to show the number of comparisons for the users target.  Show counts for both the linear and binary search algorithms.
+
+We will modify this in the next lab.
+
+ 
+
