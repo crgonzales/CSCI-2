@@ -14,38 +14,57 @@ list<int>::iterator searchListLinear(list<int>& arg, int target);
 
                                         
 int main(){
-	
-	const int size = 100;
-	int myints[size] = { 0 };
-	generateRandNumbers(myints, size);
-	list<int> mylist(myints, myints + 100);
-	list<int>::iterator itr = mylist.begin();
-	cout << "hi" << endl;
+		const int size = 100;
+		int myints[size] = { 0 };
+		int search;
+		generateRandNumbers(myints, size);
+		list<int> mylist(myints, myints + 100);
+		list<int>::iterator itr = mylist.begin();
+		cout << "hi" << endl;
+		displayList(mylist);
+		mylist.sort();
+		displayList(mylist);
+		
+		cout << endl;
+		
+	while (true) {
+		int opt=0;
+		cout << "Please choose an option from the menu below." << endl;
 
-	displayList(mylist);
-	mylist.sort();
+		cout << "1. Search List" << endl;
+		cout << "2. Exit" << endl;
+		cout << "option: ";
+		
+		cin >> opt;
 
-	displayList(mylist);
+		if (opt == 1) {
+			cout << "\nEnter the number you want to find: ";
+			cin >> search;
+			cin.ignore();
+			itr = searchListBinary(mylist, search);
+			cout << endl << "BINARY SEARCH<<" << endl;
+			if (itr == mylist.end())
+				cout << "Item not found!!" << endl;
+			else
+				cout << *itr << " found !!" << endl;
+			cout << endl << "LINEAR SEARCH" << endl;
+			itr = searchListLinear(mylist, search);
+
+			if (itr == mylist.end())
+				cout << "Item not found!!" << endl;
+			else
+				cout << *itr << " found !!\n\n" << endl;
+			
+		}
+		if (opt == 2) {
+			cout << "Exiting. . ." << endl;
+			break;
+
+		}
+
+	}
 
 
-		//list<int> listOfInts({ 1, 4, 6, 7, 9, 13, 15, 17, 20 });
-	//list<int>::iterator itr = searchListBinary(listOfInts, 4356548);
-	//if (itr == listOfInts.end())
-	itr = searchListBinary(mylist, 230054);
-	if (itr==mylist.end())
-		cout << "Item not found!!" << endl;
-	else
-		cout << *itr << " found !!" << endl;
-
-	itr = searchListLinear(mylist, 42);
-
-	if (itr == mylist.end())
-		cout << "Item not found!!" << endl;
-	else
-		cout << *itr << " found !!" << endl;
-
-
-	
 	return (0);
 }
 
@@ -56,7 +75,7 @@ list<int>::iterator searchListLinear(list<int>& arg, int target){
 			return itr;
 		}
 	}
-	return arg.begin();
+	return arg.end();
 }
 
 
