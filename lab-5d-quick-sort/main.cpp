@@ -20,21 +20,13 @@ int main() {
 }
 
 int partition(int arr[], int low, int high) {
-    int pivot = arr[low]; 
-    int i = (low - 1); 
-
-    for (int j = low; j <= high - 1; j++)
-    {
-      
-        if (arr[j] < pivot)
-        {
-            i++; 
-            swap(&arr[i], &arr[j]);
-        }
+    int pivot = arr[low];
+    int j = 0;
+    for (int i = 0; arr[low] > arr[i]; i++){
+        j++;
     }
-    swap(&arr[i + 1], &arr[high]);
-    return (i + 1);
-
+    swap(arr[low], arr[j]);
+    return j;
 }
 void swap(int* a, int* b){
     int t = *a;
