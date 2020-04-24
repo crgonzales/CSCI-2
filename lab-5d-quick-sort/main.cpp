@@ -8,10 +8,12 @@ void quickSort(int arr[], int low, int high);
 int partition(int arr[], int low, int high);
 void display(int arg[], int size);
 
+
+
 int main() {
     const int size = 9;
 	int foo[size] = { 7, 15, 4, 20, 9, 1, 6 ,13, 17 };
-//    vector<int>foo = { 1, 4, 6, 7, 9, 13, 15, 17, 20 };
+    //vector<int>bar = { 1, 4, 6, 7, 9, 13, 15, 17, 20 };
 	display(foo,size);
     quickSort(foo,0,size-1);
 	display(foo,size);
@@ -33,11 +35,12 @@ int partition(int arr[], int low, int high) {
         }
     }
     swap(&arr[i], &arr[low]);
-    display(arr, high);
+    //display(arr, high);
     return (i);
     
 
 }
+
 void swap(int* a, int* b){
     int t = *a;
     *a = *b;
